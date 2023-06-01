@@ -3,27 +3,37 @@ package com.alura.foro.domain.topico;
 import com.alura.foro.domain.curso.Curso;
 import com.alura.foro.domain.respuesta.Respuesta;
 import com.alura.foro.domain.usuario.Usuario;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "topico")
+@Table(name = "topicos")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Topico {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
 	private String mensaje;
+	@Column(name = "fecha_de_creacion")
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
+	@Enumerated(EnumType.STRING)
 	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
-	private Usuario autor;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Usuario usuario;
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Curso curso;
+	@OneToMany(mappedBy="topico", cascade = CascadeType.ALL)
 	private List<Respuesta> respuestas = new ArrayList<>();
-
-	public Topico(String titulo, String mensaje, Curso curso) {
-		this.titulo = titulo;
-		this.mensaje = mensaje;
-		this.curso = curso;
-	}
 
 	@Override
 	public int hashCode() {
@@ -49,69 +59,4 @@ public class Topico {
 			return false;
 		return true;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
-
-	public LocalDateTime getfechaCreacion() {
-		return fechaCreacion;
-	}
-
-	public void setfechaCreacion(LocalDateTime fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
-
-	public StatusTopico getStatus() {
-		return status;
-	}
-
-	public void setStatus(StatusTopico status) {
-		this.status = status;
-	}
-
-	public Usuario getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
-	}
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
-	public List<Respuesta> getRespuestas() {
-		return respuestas;
-	}
-
-	public void setRespuestas(List<Respuesta> respuestas) {
-		this.respuestas = respuestas;
-	}
-
 }
