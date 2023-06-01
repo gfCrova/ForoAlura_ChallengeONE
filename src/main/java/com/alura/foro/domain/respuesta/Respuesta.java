@@ -2,17 +2,33 @@ package com.alura.foro.domain.respuesta;
 
 import com.alura.foro.domain.topico.Topico;
 import com.alura.foro.domain.usuario.Usuario;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Entity(name = "respuesta")
+@Table(name = "respuestas")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Respuesta {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensaje;
-	private Topico topico;
+	@Column(name = "fecha_de_creacion")
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
-	private Usuario autor;
 	private Boolean solucion = false;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "topico_id")
+	private Topico topico;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
 
 	@Override
 	public int hashCode() {
@@ -38,53 +54,4 @@ public class Respuesta {
 			return false;
 		return true;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
-
-	public Topico getTopico() {
-		return topico;
-	}
-
-	public void setTopico(Topico topico) {
-		this.topico = topico;
-	}
-
-	public LocalDateTime getfechaCreacion() {
-		return fechaCreacion;
-	}
-
-	public void setfechaCreacion(LocalDateTime fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
-
-	public Usuario getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
-	}
-
-	public Boolean getSolucion() {
-		return solucion;
-	}
-
-	public void setSolucion(Boolean solucion) {
-		this.solucion = solucion;
-	}
-
 }
