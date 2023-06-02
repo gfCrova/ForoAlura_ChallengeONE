@@ -20,7 +20,17 @@ public class Usuario implements UserDetails {
 	private Long id;
 	private String nombre;
 	private String email;
+	@Column(name = "contraseña")
 	private String contrasena;
+
+	public Usuario(Long id) {
+		this.id = id;
+	}
+
+	public Usuario(String nombre, String email) {
+		this.nombre = nombre;
+		this.email = email;
+	}
 
 	@Override
 	public int hashCode() {
@@ -81,4 +91,5 @@ public class Usuario implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
+
 }

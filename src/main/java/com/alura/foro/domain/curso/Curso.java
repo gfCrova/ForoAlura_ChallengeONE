@@ -17,7 +17,21 @@ public class Curso {
 	private Long id;
 	private String nombre;
 	private String categoria;
-	
+
+	public Curso(DTORegistrarCurso registro) {
+		this.nombre = registro.nombre();
+		this.categoria = registro.categoria();
+	}
+
+	public Curso(long id) {
+		this.id = id;
+	}
+
+	public Curso(String nombre, String categoria) {
+		this.nombre = nombre;
+		this.categoria = categoria;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

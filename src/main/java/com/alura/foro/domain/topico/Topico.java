@@ -27,13 +27,23 @@ public class Topico {
 	@Column(name = "fecha_de_creacion")
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
 	@Enumerated(EnumType.STRING)
+	@Column(name = "estatus")
 	private StatusTopico status = StatusTopico.NO_RESPONDIDO;
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "curso_id")
 	private Curso curso;
 	@OneToMany(mappedBy="topico", cascade = CascadeType.ALL)
 	private List<Respuesta> respuestas = new ArrayList<>();
+
+	public Topico(DTORegistrarTopico registrar) {
+		this.titulo = registrar.titulo();
+		this.mensaje = registrar.mensaje();
+		this.usuario = new Usuario(registrar.usuario());
+		this.curso = new Curso(registrar.curso());
+	}
 
 	@Override
 	public int hashCode() {
