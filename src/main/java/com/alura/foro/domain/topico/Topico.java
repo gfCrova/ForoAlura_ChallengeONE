@@ -41,8 +41,8 @@ public class Topico {
 	public Topico(DTORegistrarTopico registrar) {
 		this.titulo = registrar.titulo();
 		this.mensaje = registrar.mensaje();
-		this.usuario = new Usuario(registrar.usuario());
-		this.curso = new Curso(registrar.curso());
+		this.usuario = new Usuario(registrar.usuario().getId());
+		this.curso = new Curso(registrar.curso().getId());
 	}
 
 	@Override
@@ -68,5 +68,20 @@ public class Topico {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public void actualizarDatos(DTOActualizarTopico datosActualizar) {
+		if(datosActualizar.titulo() != null) {
+			this.titulo = datosActualizar.titulo();
+		}
+		if (datosActualizar.mensaje() != null) {
+			this.mensaje = datosActualizar.mensaje();
+		}
+		if (datosActualizar.usuario() != null) {
+			this.usuario = datosActualizar.usuario();
+		}
+		if (datosActualizar.curso() != null) {
+			this.curso = datosActualizar.curso();
+		}
 	}
 }
