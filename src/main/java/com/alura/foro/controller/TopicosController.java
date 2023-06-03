@@ -40,8 +40,8 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario().getNombre(),
-                topico.getCurso().getNombre()
+                topico.getUsuario(),
+                topico.getCurso()
         );
         URI url = uri.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(url).body(datosDeRespuestaTopico);
@@ -61,8 +61,8 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario().getNombre(),
-                topico.getCurso().getNombre()
+                topico.getUsuario(),
+                topico.getCurso()
         );
         return ResponseEntity.ok(datosTopico);
     }
@@ -78,8 +78,8 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario().getNombre(),
-                topico.getCurso().getNombre()
+                topico.getUsuario(),
+                topico.getCurso()
         ));
     }
 
