@@ -15,6 +15,6 @@ public record DTORespuestaTopico(
          String mensaje,
          LocalDateTime fechaCreacion,
          StatusTopico status,
-         String usuario,
-         String curso) {
+         Usuario usuario,
+         Curso curso) {
 }
