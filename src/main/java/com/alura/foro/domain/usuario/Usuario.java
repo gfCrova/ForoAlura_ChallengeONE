@@ -27,6 +27,12 @@ public class Usuario implements UserDetails {
 		this.id = id;
 	}
 
+	public Usuario(DTORegistrarUsuario usuario) {
+		this.nombre = usuario.nombre();
+		this.email = usuario.email();
+		this.contrasena = usuario.contrasena();
+	}
+
 	public Usuario(String nombre, String email) {
 		this.nombre = nombre;
 		this.email = email;
