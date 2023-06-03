@@ -1,6 +1,6 @@
 <h1><img align="center" width="50" src="https://user-images.githubusercontent.com/91544872/209678377-70b50b21-33de-424c-bed8-6a71ef3406ff.png"> Foro Alura ChallengeONE 
    <img align="right" src="https://img.shields.io/badge/STATUS-EN%20DESARROLLO-red">
-</h1> 
+</h1> <br>
 
 <p align="left"> Proyecto Foro Alura 4° Challenge Oracle Next Education - Formación Backend Java | Spring Boot</p> <br>
 
