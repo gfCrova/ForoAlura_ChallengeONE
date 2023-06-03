@@ -1,4 +1,8 @@
 package com.alura.foro.domain.curso;
 
-public record DatosCurso(String nombre, String categoria) {
+import jakarta.validation.constraints.NotBlank;
+
+public record DatosCurso(
+        @NotBlank String nombre,
+        @NotBlank String categoria) {
 }
