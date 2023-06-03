@@ -3,9 +3,6 @@ package com.alura.foro.controller;
 import com.alura.foro.domain.curso.Curso;
 import com.alura.foro.domain.curso.DTOListarCursos;
 import com.alura.foro.domain.curso.DTORegistrarCurso;
-import com.alura.foro.domain.curso.DTORespuestaCursos;
-import com.alura.foro.domain.topico.DTOListarTopicos;
-import com.alura.foro.domain.topico.DTORegistrarTopico;
 import com.alura.foro.repository.CursoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +21,9 @@ public class CursoController {
     private CursoRepository cursoRepository;
 
     @PostMapping
-    public ResponseEntity<DTORespuestaCursos> regitrarCurso(@RequestBody @Valid DTORegistrarCurso registro, UriComponentsBuilder uri) {
+    public ResponseEntity<DTOListarCursos> regitrarCurso(@RequestBody @Valid DTORegistrarCurso registro, UriComponentsBuilder uri) {
         Curso curso = cursoRepository.save(new Curso(registro));
-        DTORespuestaCursos dtoRespuestaCursos = new DTORespuestaCursos(
+        DTOListarCursos dtoRespuestaCursos = new DTOListarCursos(
                 curso.getId(),
                 curso.getNombre(),
                 curso.getCategoria()
