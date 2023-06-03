@@ -2,7 +2,7 @@
    <img align="right" src="https://img.shields.io/badge/STATUS-EN%20DESARROLLO-red">
 </h1> 
 
-<p align="left"> Proyecto Foro Alura 4° Challenge Oracle Next Education </p> <br>
+<p align="left"> Proyecto Foro Alura 4° Challenge Oracle Next Education - Formación Backend Java | Spring Boot</p> <br>
 
 - ### Tecnologías utilizadas:
 
