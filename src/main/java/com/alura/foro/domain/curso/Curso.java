@@ -56,4 +56,10 @@ public class Curso {
 			return false;
 		return true;
 	}
+
+	public void actualizarDatos(DTOListarCursos datosActualizar) {
+		if (datosActualizar.nombre() != null) {
+			this.nombre = datosActualizar.nombre();
+		}
+	}
 }
