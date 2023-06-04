@@ -1,6 +1,7 @@
 package com.alura.foro.domain.curso;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,11 +26,6 @@ public class Curso {
 
 	public Curso(long id) {
 		this.id = id;
-	}
-
-	public Curso(String nombre, String categoria) {
-		this.nombre = nombre;
-		this.categoria = categoria;
 	}
 
 	@Override
@@ -57,9 +53,12 @@ public class Curso {
 		return true;
 	}
 
-	public void actualizarDatos(DTOListarCursos datosActualizar) {
+	public void actualizarDatos(@Valid DTOActualizarCurso datosActualizar) {
 		if (datosActualizar.nombre() != null) {
 			this.nombre = datosActualizar.nombre();
+		}
+		if (datosActualizar.categoria() != null) {
+			this.categoria = datosActualizar.categoria();
 		}
 	}
 }
