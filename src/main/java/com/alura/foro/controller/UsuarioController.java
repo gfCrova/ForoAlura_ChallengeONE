@@ -1,8 +1,5 @@
 package com.alura.foro.controller;
 
-import com.alura.foro.domain.curso.Curso;
-import com.alura.foro.domain.curso.DTOListarCursos;
-import com.alura.foro.domain.curso.DTORegistrarCurso;
 import com.alura.foro.domain.usuario.DTOListarUsuarios;
 import com.alura.foro.domain.usuario.DTORegistrarUsuario;
 import com.alura.foro.domain.usuario.Usuario;

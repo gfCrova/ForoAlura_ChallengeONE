@@ -1,15 +1,10 @@
 package com.alura.foro.controller;
 
-import com.alura.foro.domain.curso.Curso;
-import com.alura.foro.domain.curso.DTORegistrarCurso;
-import com.alura.foro.domain.curso.DatosCurso;
 import com.alura.foro.domain.topico.DTOActualizarTopico;
 import com.alura.foro.domain.topico.DTOListarTopicos;
 import com.alura.foro.domain.topico.DTORegistrarTopico;
 import com.alura.foro.domain.respuesta.DTORespuestaTopico;
 import com.alura.foro.domain.topico.Topico;
-import com.alura.foro.domain.usuario.DatosUsuario;
-import com.alura.foro.domain.usuario.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
