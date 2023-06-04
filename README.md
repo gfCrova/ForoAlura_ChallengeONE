@@ -47,13 +47,13 @@
 
 <br>
 
-   - Listar todos los Cursos
+   - ## Listar todos los Cursos
 
    - ![Listar Cursos](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/ffeda57b-1e41-4597-b85e-d46e514828d0)
 
 <br>
 
-   - Registrar un Tópico
+   - ## Registrar un Tópico
 
    - 
 
