@@ -16,31 +16,32 @@
 
 <br>
 
-## Registrar un nuevo Usuario
+## Endpoints 
 
-Se uso un algoritmo de Hashing para guardar la clave. <a href="https://www.browserling.com/tools/bcrypt">BCrypt Password Generator</a><br>
-La contraseña encriptada en este caso es ```admin```
+   - ## Registrar un nuevo Usuario
 
-<br>
-
-![Registrar Usuario](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/3ec08fb8-28bf-41a0-ba62-2de1a43df6fd)
+   Se uso un algoritmo de Hashing para guardar la clave. <a href="https://www.browserling.com/tools/bcrypt">BCrypt Password Generator</a><br>
+   La contraseña encriptada en este caso es ```admin```
 
 <br>
 
-## Login
-
-``` json
-   {
-      "nombre" : "Giselle",
-      "contrasena" : "admin"
-   }
-```
-
-![Login](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/8fda90f1-ffb7-415e-989e-a81e7b88dcf6)
+   ![Registrar Usuario](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/3ec08fb8-28bf-41a0-ba62-2de1a43df6fd)
 
 <br>
 
-## Listar todos los Usuarios
+   - ## Login
 
-![ListarUsuarios](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/0100f777-79b7-4c7a-932f-cb6c331d2efe)
+   ![Login](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/8fda90f1-ffb7-415e-989e-a81e7b88dcf6)
 
+<br>
+
+   - ## Listar todos los Usuarios
+
+   ![ListarUsuarios](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/0100f777-79b7-4c7a-932f-cb6c331d2efe)
+
+
+   - ## Registrar un Curso
+   
+   ![Registrar Curso](https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/efd951d7-35d7-4195-b723-3e2d1d1fa6d1)
+
+   
