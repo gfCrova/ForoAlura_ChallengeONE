@@ -36,12 +36,13 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy="topico", cascade = CascadeType.ALL)
 	private List<Respuesta> respuestas = new ArrayList<>();
+	private Boolean activo = true;
 
 	public Topico(DTORegistrarTopico registrar) {
 		this.titulo = registrar.titulo();
 		this.mensaje = registrar.mensaje();
-		this.usuario = new Usuario(registrar.usuario().getId());
-		this.curso = new Curso(registrar.curso().getId());
+		this.usuario = new Usuario(registrar.usuario());
+		this.curso = new Curso(registrar.curso());
 	}
 
 	@Override
@@ -83,4 +84,5 @@ public class Topico {
 			this.curso = datosActualizar.curso();
 		}
 	}
+
 }

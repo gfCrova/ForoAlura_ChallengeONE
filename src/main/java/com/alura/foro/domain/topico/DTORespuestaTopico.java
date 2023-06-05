@@ -1,4 +1,4 @@
-package com.alura.foro.domain.respuesta;
+package com.alura.foro.domain.topico;
 
 import com.alura.foro.domain.curso.Curso;
 import com.alura.foro.domain.topico.StatusTopico;
