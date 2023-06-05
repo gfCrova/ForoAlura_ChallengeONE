@@ -1,6 +1,8 @@
 package com.alura.foro.domain.usuario;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,17 +25,23 @@ public class Usuario implements UserDetails {
 	@Column(name = "contraseña")
 	private String contrasena;
 
-	public Usuario(Long id) {
-		this.id = id;
+	public Usuario(@NotNull @Valid Usuario usuario) {
+		this(usuario.getId(), usuario.getNombre(), usuario.getEmail());
 	}
 
-	public Usuario(DTORegistrarUsuario usuario) {
+	public Usuario(@NotNull DTORegistrarUsuario usuario) {
 		this.nombre = usuario.nombre();
 		this.email = usuario.email();
 		this.contrasena = usuario.contrasena();
 	}
 
 	public Usuario(String nombre, String email) {
+		this.nombre = nombre;
+		this.email = email;
+	}
+
+	public Usuario(Long id, String nombre, String email) {
+		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 	}
@@ -96,6 +104,15 @@ public class Usuario implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	public void actualizarDatos(@Valid DTOActualizarUsuario datosActualizar) {
+		if (datosActualizar.nombre() != null) {
+			this.nombre = datosActualizar.nombre();
+		}
+		if (datosActualizar.email() != null) {
+			this.email = datosActualizar.email();
+		}
 	}
 
 }
