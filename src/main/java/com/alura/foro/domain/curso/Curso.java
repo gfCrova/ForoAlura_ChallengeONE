@@ -2,6 +2,7 @@ package com.alura.foro.domain.curso;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,8 +25,8 @@ public class Curso {
 		this.categoria = registro.categoria();
 	}
 
-	public Curso(long id) {
-		this.id = id;
+	public Curso(@NotNull @Valid Curso curso) {
+		this(curso.getId(), curso.getNombre(), curso.getCategoria());
 	}
 
 	@Override
