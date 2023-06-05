@@ -1,12 +1,17 @@
 package com.alura.foro.controller;
 
+import com.alura.foro.domain.curso.Curso;
 import com.alura.foro.domain.topico.DTOActualizarTopico;
 import com.alura.foro.domain.topico.DTOListarTopicos;
 import com.alura.foro.domain.topico.DTORegistrarTopico;
-import com.alura.foro.domain.respuesta.DTORespuestaTopico;
+import com.alura.foro.domain.topico.DTORespuestaTopico;
 import com.alura.foro.domain.topico.Topico;
+import com.alura.foro.domain.usuario.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -35,18 +40,34 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario(),
-                topico.getCurso()
+                new Usuario(
+                        topico.getUsuario().getId(),
+                        topico.getUsuario().getNombre(),
+                        topico.getUsuario().getEmail(),
+                        topico.getUsuario().getContrasena()
+                ),
+                new Curso(
+                        topico.getCurso().getId(),
+                        topico.getCurso().getNombre(),
+                        topico.getCurso().getCategoria()
+                )
         );
         URI url = uri.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(url).body(datosDeRespuestaTopico);
     }
 
-    @GetMapping
+    /*@GetMapping
     public List<DTOListarTopicos> listadoTopicos() {
         return topicoRepository.findAll().stream().map(DTOListarTopicos::new).toList();
+    }*/
+
+    @GetMapping
+    public ResponseEntity<Page<DTOListarTopicos>> listadoMedicos(Pageable paginacion) {
+        //return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new);
+        return ResponseEntity.ok(topicoRepository.findByActivoTrue(paginacion).map(DTOListarTopicos::new));
     }
 
+    // GET POR ID
     @GetMapping("/{id}")
     public ResponseEntity<DTORespuestaTopico> listarTopicosPorId(@PathVariable Long id) {
         Topico topico = topicoRepository.getReferenceById(id);
@@ -56,8 +77,17 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario(),
-                topico.getCurso()
+                new Usuario(
+                        topico.getUsuario().getId(),
+                        topico.getUsuario().getNombre(),
+                        topico.getUsuario().getEmail(),
+                        topico.getUsuario().getContrasena()
+                ),
+                new Curso(
+                        topico.getCurso().getId(),
+                        topico.getCurso().getNombre(),
+                        topico.getCurso().getCategoria()
+                )
         );
         return ResponseEntity.ok(datosTopico);
     }
@@ -73,8 +103,17 @@ public class TopicosController {
                 topico.getMensaje(),
                 topico.getFechaCreacion(),
                 topico.getStatus(),
-                topico.getUsuario(),
-                topico.getCurso()
+                new Usuario(
+                        topico.getUsuario().getId(),
+                        topico.getUsuario().getNombre(),
+                        topico.getUsuario().getEmail(),
+                        topico.getUsuario().getContrasena()
+                ),
+                new Curso(
+                        topico.getCurso().getId(),
+                        topico.getCurso().getNombre(),
+                        topico.getCurso().getCategoria()
+                )
         ));
     }
 
