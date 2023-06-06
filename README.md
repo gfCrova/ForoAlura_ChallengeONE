@@ -84,3 +84,5 @@ Crear un nuevo tópico, mostrar todos los tópicos creados, mostrar un tópico e
    <h2> Insignia del challenge </h2>
    <img src="https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/c39aebb8-b5de-4af5-bc2b-256337fea8bb" />
 </div>
+
+![GitHub Org's stars](https://img.shields.io/github/stars/gfCrova/ForoAlura_ChallengeONE?style=social)
