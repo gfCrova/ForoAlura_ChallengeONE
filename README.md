@@ -86,4 +86,4 @@ Crear un nuevo tópico, mostrar todos los tópicos creados, mostrar un tópico e
 </div>
 
 ![GitHub Org's stars](https://img.shields.io/github/stars/gfCrova/ForoAlura_ChallengeONE?style=social)
-![GitHub Org's following](https://img.shields.io/github/forks/gfCrova/ForoAlura_ChallengeONE?style=social)
+![GitHub Org's forks](https://img.shields.io/github/forks/gfCrova/ForoAlura_ChallengeONE?style=social)
