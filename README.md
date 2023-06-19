@@ -1,5 +1,5 @@
 <h1><img align="center" width="50" src="https://user-images.githubusercontent.com/91544872/209678377-70b50b21-33de-424c-bed8-6a71ef3406ff.png"> Foro Alura ChallengeONE 
-   <img align="right" src="https://img.shields.io/badge/STATUS-EN%20DESARROLLO-darkgreen">
+   <img align="right" src="https://img.shields.io/badge/STATUS-FINALIZADO-darkgreen">
 </h1> <br>
 
 <p align="left">API REST usando Spring. <br>
@@ -84,3 +84,6 @@ Crear un nuevo tópico, mostrar todos los tópicos creados, mostrar un tópico e
    <h2> Insignia del challenge </h2>
    <img src="https://github.com/gfCrova/ForoAlura_ChallengeONE/assets/103906625/c39aebb8-b5de-4af5-bc2b-256337fea8bb" />
 </div>
+
+![GitHub Org's stars](https://img.shields.io/github/stars/gfCrova/ForoAlura_ChallengeONE?style=social)
+![GitHub Org's forks](https://img.shields.io/github/forks/gfCrova/ForoAlura_ChallengeONE?style=social)
