@@ -38,7 +38,7 @@ public class CursoController {
 
     @PutMapping
     @Transactional
-    public ResponseEntity actualizarTopico(@RequestBody @Valid DTOActualizarCurso datosActualizar) {
+    public ResponseEntity<DTOListarCursos> actualizarTopico(@RequestBody @Valid DTOActualizarCurso datosActualizar) {
         Curso curso = cursoRepository.getReferenceById(datosActualizar.id());
         curso.actualizarDatos(datosActualizar);
             return ResponseEntity.ok( new DTOListarCursos(
